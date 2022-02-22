@@ -1,0 +1,13 @@
+<div *ngIf="hero">
+    <ul [appHighlight]="'blue'">
+        <li>
+            <!-- <p>{{hero.name | prefix }}</p>  // ebben az esetben Mr. lesz a prefix -->
+            <p *appDelay="5000" >{{hero.name | prefix: 'Don'}}</p>
+        </li>
+        <li>
+            <p *appDelay="7500">{{hero.address}}</p>
+        </li>
+        <li>
+            <p *appDelay="10000">{{hero.superpower}}</p>
+        </li>
+    </ul>
