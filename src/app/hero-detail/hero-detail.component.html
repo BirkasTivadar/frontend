@@ -1,13 +1,55 @@
+<div class="row">
+    <div class="col-6 offset-3">
+        <form *ngIf="hero" (ngSubmit)="onSubmit(hero)" #heroForm="ngForm" >
+            <div class="form-group">
+                <label for="heroName">Name</label>
+                <input id="heroName" name="name" [(ngModel)]="hero.name" type="text" class="form-control" required
+                    #heroName="ngModel">
+                    <!-- heroName.pristine azt jelenti, hogy még érintetlen a mező -->
+                <div class="error-feedback" [hidden]="heroName.valid || heroName.pristine"> 
+                    Please write the name of Hero!
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="heroAddress">Address</label>
+                <input id="heroAddress" name="address" [(ngModel)]="hero.address" type="text" class="form-control"
+                     required pattern=".{10,}" #heroAddress="ngModel">
+                     <div class="error-feedback" [hidden]="heroAddress.valid || heroAddress.pristine"> 
+                        Address must be 10 min character!
+                    </div>
+            </div>
+            <div class="form-group">
+                <label for="heroPower">Superpower</label>
+                <select id="heroPower" name="superpower" [(ngModel)]="hero.superpower" class="form-control" required>
+                    <option *ngFor="let power of superPowers" [value]="power">{{ power }}</option>
+                </select>
+                <!-- <input id="heroPower" name="superpower" [(ngModel)]="hero.superpower" type="text" class="form-control"
+                required> -->
+            </div>
+            <button [disabled]="!heroForm.form.valid" type="submit" class="btn btn-success">update</button>
+            <pre>
+                {{ heroForm.form.valid | json }}
+            </pre>
+        </form>
+        <pre>
+            {{ hero | json }}
+        </pre>
+    </div>
+</div>
+
+
+<!--  
 <div *ngIf="hero">
     <ul [appHighlight]="'blue'">
         <li>
-            <!-- <p>{{hero.name | prefix }}</p>  // ebben az esetben Mr. lesz a prefix -->
-            <p *appDelay="5000" >{{hero.name | prefix: 'Don'}}</p>
+             <p>{{hero.name | prefix }}</p>  // ebben az esetben Mr. lesz a prefix 
+            <p *appDelay="1000" >{{hero.name | prefix: 'Don'}}</p>
         </li>
         <li>
-            <p *appDelay="7500">{{hero.address}}</p>
+            <p *appDelay="1100">{{hero.address}}</p>
         </li>
         <li>
-            <p *appDelay="10000">{{hero.superpower}}</p>
+            <p *appDelay="1200">{{hero.superpower}}</p>
         </li>
     </ul>
+   -->

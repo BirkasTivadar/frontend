@@ -1,0 +1,22 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "address": "New Yorker",
+      "superpower": "biking"
+    },
+    {
+      "id": 2,
+      "name": "Magneto",
+      "address": "London",
+      "superpower": "magnetic"
+    },
+    {
+      "name": "Nagy Péter",
+      "address": "Győr, Lomnic",
+      "superpower": "",
+      "id": 3
+    }
+  ]
+}

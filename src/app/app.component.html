@@ -1,4 +1,22 @@
-<h1>{{title}}</h1>
+<app-nav></app-nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+
+<!-- <div style="text-align: center">
+    <h1>
+        Welcome to {{title}}!
+    </h1>
+</div>
+<h2>List of heroes</h2>
+<ul>
+    <li *ngFor="let hero of listObservable | async"> 
+
+        azért kell az async (amivel az async pipe-ot használjuk), mert a listObservable nem bejárható de az async pipe feliratkozik automatice az Observable-re és akkor fut csak le a ngFor, ha megjöttek az adatok 
+        <button (click)="setHero(hero)" class="btn btn-info">{{ hero.name}}</button>
+    </li>
+</ul>
+
 <h2>Hero details</h2>
-<app-hero-detail [hero]="myHero" ></app-hero-detail>
-<!-- <app-hero-detail [hero]="anotherHero"></app-hero-detail> -->
+<app-hero-detail *ngIf="myHero" [hero]="myHero"></app-hero-detail> -->
