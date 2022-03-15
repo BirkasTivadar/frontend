@@ -1,8 +1,8 @@
-export interface Hero {
+export class Hero {
     id?: number;
-    name: string;
-    address: string;
-    superpower: string;
+    name!: string;
+    address!: string;
+    superpower!: string;
 }
 
 export class superPowers {

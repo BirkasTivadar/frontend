@@ -26,13 +26,13 @@ export class HeroService {
           let id = heroes[heroes.length - 1].id;
           this.http.post<Observable<any>>(this.jsonUrl, hero)
             .forEach(res => {
-              resolve('Nem volt id');
+              resolve('');
             });
         });
       } else {
         this.http.post<Observable<any>>(this.jsonUrl, hero)
           .forEach(res => {
-            resolve('Volt id');
+            resolve('');
           });
       }
     });

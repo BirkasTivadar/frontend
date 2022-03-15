@@ -9,7 +9,7 @@ import { HeroService } from '../service/hero.service';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  hero?: Hero;
+  hero!: Hero;
   superPowers: Array<string> = [
     "magnetic",
     "really smart",

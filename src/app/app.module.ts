@@ -18,6 +18,9 @@ import { HomeComponent } from './home/home.component';
 import { HeroComponent } from './hero/hero.component';
 import { NavComponent } from './nav/nav.component';
 import { AddHeroComponent } from './add-hero/add-hero.component';
+import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
+import { QuestionComponent } from './question/question.component';
+import { QuestionControlService } from './qform/question-control-service';
 
 // a routinghoz kell:
 const appRoutes: Routes = [
@@ -37,7 +40,10 @@ const appRoutes: Routes = [
     path: "hero/:id",
     component: HeroDetailComponent
   },
-
+  {
+    path: "questions",
+    component: QuestionComponent
+  },
   {
     path: "**", // itt azt állítom be, hogy bármi más, mint home vagy hero
     component: HomeComponent
@@ -52,7 +58,9 @@ const appRoutes: Routes = [
     DelayDirective,
     HighlightDirective,
     NavComponent,
-    AddHeroComponent
+    AddHeroComponent,
+    DynamicFormQuestionComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +72,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     FootballService,
-    HeroService
+    HeroService,
+    QuestionControlService
   ],
   bootstrap: [AppComponent]
 })

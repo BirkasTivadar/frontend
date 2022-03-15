@@ -17,6 +17,12 @@
       "address": "Győr, Lomnic",
       "superpower": "",
       "id": 3
+    },
+    {
+      "name": "Big Tom",
+      "address": "New Yorker",
+      "superpower": "really smart",
+      "id": 4
     }
   ]
 }
